@@ -1,0 +1,17 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.cardtitle {
+    color: #016670;
+    font-weight: 700;
+}
+
+p{
+    text-align: justify;
+}
+
+.wrapper{
+    margin: 1rem;
+}

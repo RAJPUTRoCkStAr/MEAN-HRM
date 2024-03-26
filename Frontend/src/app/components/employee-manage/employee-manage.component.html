@@ -1,0 +1,229 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h1>Employee Management</h1>
+    <div class="row">
+        <div class="col-6 regform">
+            <h2>User Details</h2>
+
+            <form [formGroup]="empReg" #registrationform="ngForm" (ngSubmit)="empRegister(registrationform.value)">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="First name" name="FirstName" ngModel
+                                formControlName="FirstName" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Last name" name="LastName" ngModel
+                                formControlName="LastName" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <input class="form-control" name="Email" placeholder="Email" ngModel
+                                formControlName="Email" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="EmpStartDate" ngModel
+                                [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" formControlName="EmpStartDate" />
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                    <path
+                                        d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                    <path
+                                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="PhoneNumber" formControlName="PhoneNumber" ngModel
+                                placeholder="Contact No" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <input class="form-control" name="Address" formControlName="Address" ngModel
+                            placeholder="Address" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="Designation" formControlName="Designation" ngModel
+                                placeholder="Designation" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BasicSalary" formControlName="BasicSalary" ngModel
+                                placeholder="Basic Salary" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="example-container">
+                        <div class="input-group">
+                            <input class="form-control" name="Password" formControlName="Password" ngModel
+                                placeholder="Password" type="password" />
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-2">Bank Details</h2>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BankName" formControlName="BankName" ngModel
+                                placeholder="Bank name" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BranchName" formControlName="BranchName" ngModel
+                                placeholder="Branch name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="AccHolderName" formControlName="AccHolderName"
+                                placeholder="Holder name" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="AccountNumber" formControlName="AccountNumber"
+                                placeholder="Account no" />
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary button">Register</button>
+            </form>
+        </div>
+
+        <!-- employee update -->
+
+        <div class="col-6">
+            <h2>User Details Update</h2>
+
+            <form [formGroup]="empUpd" #updateform="ngForm" (ngSubmit)="empUpdate(updateform.value)">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="Email" placeholder="Email" ngModel
+                                formControlName="Email" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="PhoneNumber" formControlName="PhoneNumber" ngModel
+                                placeholder="Contact No" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="Designation" formControlName="Designation" ngModel
+                                placeholder="Designation" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BasicSalary" formControlName="BasicSalary" ngModel
+                                placeholder="Basic Salary" />
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary button">Update</button>
+            </form>
+
+            <!--Bank Details-->
+
+            <h2>Bank Details Update</h2>
+
+            <form [formGroup]="bankUpd" #bankform="ngForm" (ngSubmit)="bankUpdate(bankform.value)">
+                <div class="row">
+                    <div class="col-">
+                        <div class="input-group">
+                            <input class="form-control" name="Email" placeholder="Email" ngModel
+                                formControlName="Email" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BankName" formControlName="BankName" ngModel
+                                placeholder="Bank name" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="BranchName" formControlName="BranchName" ngModel
+                                placeholder="Branch name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="AccHolderName" formControlName="AccHolderName" ngModel
+                                placeholder="Holder name" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" name="AccountNumber" formControlName="AccountNumber" ngModel
+                                placeholder="Account no" />
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary button">Update</button>
+            </form>
+
+            <h2>Employee Resignation</h2>
+
+            <div class="row">
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <input class="form-control" name="Email" placeholder="Email" [(ngModel)]="inputValue"/>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <button type="submit" (click)="empDelet(inputValue)" class="btn btn-primary button-del">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+.example-form-field {
+    width: 300px;
+    margin: 5px;
+}
+
+.button {
+    width: 12rem;
+    margin: 5px;
+    background-color: #016670;
+    border-color: #016670;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #038490 !important;
+    border-color: #016670 !important;
+}
+
+.tablediv {
+    top: 50%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    
+}
+
+.theadbak{
+    background-color: #016670;
+    border: white;
+    color: white;
+}
+
+.center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper{
+    margin: 1rem;
+}
+
+.btncreate{
+    margin-left: 10.1rem;
+    margin-bottom: 1rem;
+}

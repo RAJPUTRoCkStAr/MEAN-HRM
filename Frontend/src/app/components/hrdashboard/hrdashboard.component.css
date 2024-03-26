@@ -1,0 +1,73 @@
+.container{
+    margin-top: 1.5rem;
+}
+
+.wrapper{
+    margin: 1rem;
+}
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 12rem;
+    background-color: #016670;
+    border-color: #016670;
+    color: white;
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary:hover {
+    background-color: #038490 !important;
+    border-color: #016670 !important;
+}
+
+.payroll-img {
+    background-image: url(../../../assets/icons/calendar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}
+
+.leave-img {
+    background-image: url(../../../assets/icons/holidays.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}
+
+.project-img {
+    background-image: url(../../../assets/icons/project-management.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}
+
+.employee-img {
+    background-image: url(../../../assets/icons/personal-information.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}
+
+.resource-img {
+    background-image: url(../../../assets/icons/resources.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}

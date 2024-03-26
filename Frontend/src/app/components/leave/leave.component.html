@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <h1>Leave & Work from home</h1>
+    <div class="row">
+        <div class="col-3">
+            <mat-card style="width: 18rem;">
+                <div class="wrapper">
+                    <div class="card-body">
+                        <h3 class="card-title text-center cardtitle">Employee Leave & WFH Request</h3>
+                        <div class="leave-img"></div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-9">
+            <mat-card>
+                <form [formGroup]="form" #leave="ngForm" (ngSubmit)="Submit(leave.value)">
+                    <div class="tablediv">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd" name="RequestDate" ngModel [(ngModel)]="model"
+                                        ngbDatepicker #d="ngbDatepicker" formControlName="RequestDate"/>
+                                    <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                            class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                            <path
+                                                d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                                            <path
+                                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+    
+                            <div class="col-3">
+                                <select class="form-select input-group" name="Month" ngModel formControlName="Month">
+                                    <option selected value="Month">Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="Augest">Augest</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+    
+                            <div class="col-3">
+                                <select class="form-select input-group" name="ReqType" ngModel formControlName="ReqType">
+                                    <option selected value="Leave Type">Leave Type</option>
+                                    <option value="Leave">Leave</option>
+                                    <option value="WFH">WFH</option>
+                                </select>
+                            </div>
+    
+                            <div class="col-3">
+                                <div class="input-group">
+                                    <input class="form-control" name="Reason" ngModel formControlName="Reason" placeholder="Reason" />
+                                    <input [(ngModel)]="email" [hidden]="true" name="Email" ngModel formControlName="Email" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button type="submit" style="margin: 13px;" class="btn btn-primary button">Apply</button>
+                        </div>
+                    </div>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <mat-card>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Request Date</th>
+                                <th scope="col">Month</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let leave of leaves">
+                                <th scope="row">{{leave.ReqType}}</th>
+                                <td>{{leave.Reason}}</td>
+                                <td>{{leave.RequestDate}}</td>
+                                <td>{{leave.Month}}</td>
+                                <td>{{leave.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

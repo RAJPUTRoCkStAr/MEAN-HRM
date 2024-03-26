@@ -1,0 +1,105 @@
+<app-navbar></app-navbar>
+<div class="container mt-5">
+    <h1>Payroll Management</h1>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <input class="form-control" type="email" name="Email" placeholder="Email" [(ngModel)]="email"/>
+            </div>
+        </div>
+        <div class="col-9">
+            <button type="button" (click)="Search(email)" class="btn btn-primary button">Search</button>
+        </div>
+    </div>
+
+    <div class="row" style="height: 270px;">
+        <mat-card>
+            <div class="tablediv">
+                <table class="table">
+                    <thead class="theadbak">
+                        <tr>
+                            <th scope="col">Month</th>
+                            <th scope="col">Basic Salary</th>
+                            <th scope="col">Deductions</th>
+                            <th scope="col">Reson(Deduct)</th>
+                            <th scope="col">Addition</th>
+                            <th scope="col">Reason(Addition)</th>
+                            <th scope="col">Net Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let employee of empDetails">
+                            <td>{{employee.Month}}</td>
+                            <td>{{basicSal}}</td>
+                            <td>{{employee.DeductAmount}}</td>
+                            <td>{{employee.DeductReason}}</td>
+                            <td>{{employee.AddAmount}}</td>
+                            <td>{{employee.AddReason}}</td>
+                            <td>{{employee.NetSalary}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </mat-card>
+    </div>
+
+    <div class="row mt-5">
+        <mat-card>
+            <div class="center">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <input type="email" [(ngModel)]="formData.Email" class="form-control example-form-field" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <select class="form-select" [(ngModel)]="formData.Month" aria-label="Default select example">
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="Augest">Augest</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <input type="text" [(ngModel)]="formData.DeductAmount" class="form-control example-form-field" placeholder="Deductions" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <input type="text" [(ngModel)]="formData.DeductionReason" class="form-control example-form-field"
+                                    placeholder="Deduction Reason" />
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <input type="text" [(ngModel)]="formData.AddAmount" class="form-control example-form-field" placeholder="Addtions" />
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mb-3">
+                                <input type="text" [(ngModel)]="formData.AdditionReason" class="form-control example-form-field" placeholder="Addition Reasons" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" (click)="Submit()" class="btn btn-primary button btncreate">Create</button>
+        </mat-card>
+    </div>
+</div>

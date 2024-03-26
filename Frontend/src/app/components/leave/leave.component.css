@@ -1,0 +1,69 @@
+h1 {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.cardtitle {
+    justify-content: center;
+    display: flex;
+    color: #016670;
+    font-weight: 700;
+}
+
+.leave-img {
+    background-image: url(../../../assets/icons/holidays.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 8rem;
+    margin-top: 0px;
+    height: 10rem;
+}
+
+.wrapper {
+    margin: 1rem;
+}
+
+.centerdiv {
+    top: 50%;
+    text-align: center;
+}
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 12rem;
+    background-color: #016670;
+    border-color: #016670;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #038490 !important;
+    border-color: #016670 !important;
+}
+
+.tablediv {
+    top: 50%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+}
+
+.theadbak {
+    background-color: #016670;
+    border: white;
+    color: white;
+}
+
+.input-group {
+    width: 100%;
+}
+td{
+    margin: 5px;
+}
+
+mat-form-field {
+    margin-right: 12px;
+}

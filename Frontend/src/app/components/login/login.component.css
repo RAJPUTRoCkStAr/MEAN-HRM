@@ -1,0 +1,51 @@
+.back{
+    margin: 0;
+    background-image: url(../../../assets/images/group-business-people-having-meeting.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #038490;
+    height: 100vh;
+}
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-top: 2rem;
+    font-weight: bolder;
+    color: #016670;
+}
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 12rem;
+    background-color: #016670;
+    border-color: #016670;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #038490 !important;
+    border-color: #016670 !important;
+}
+
+.lablecolor{
+    font-weight: bold;
+    color: black;
+    margin-right: 1rem;
+}
+.wrapper{
+    margin: 10rem;
+}
+
+.box{
+    margin: 5rem;
+}
+.cardd{
+    background-color: rgba(255, 255, 255, 0.742);
+}

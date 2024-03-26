@@ -1,0 +1,55 @@
+h1 {
+    color: #016670;
+    font-weight: bolder;
+}
+
+h2 {
+    color: #000000;
+    font-weight: bolder;
+}
+
+.example-form-field {
+    width: 100%;
+    margin: 5px;
+}
+
+.button {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 12rem;
+    background-color: #016670;
+    border-color: #016670;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #038490 !important;
+    border-color: #016670 !important;
+}
+
+.tablediv {
+    top: 50%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+}
+
+.theadbak {
+    background-color: #016670;
+    border: white;
+    color: white;
+}
+
+.wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group{
+    width: 100%;
+    margin: 5px;
+}

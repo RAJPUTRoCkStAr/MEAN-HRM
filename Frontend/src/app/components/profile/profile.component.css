@@ -1,0 +1,33 @@
+.rowheight{
+    height: 20rem;
+}
+
+h1 {
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+}
+
+.cardtitle {
+    color: #016670;
+    font-weight: 700;
+    margin: 0.5rem;
+}
+
+.title-icon{
+    height: 1.5rem;
+}
+
+.tablediv {
+    top: 50%;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    
+}
+
+.theadbak{
+    background-color: #016670;
+    border: white;
+    color: white;
+}

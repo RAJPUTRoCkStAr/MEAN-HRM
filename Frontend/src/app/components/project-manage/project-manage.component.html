@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <h1>Manage Projects</h1>
+    <div class="row">
+        <div class="col-5">
+            <h2>Project Allocation</h2>
+
+            <form [formGroup]="form" #project="ngForm" (ngSubmit)="Submit(project.value)">
+                <div class="row">
+                    <div class="col-6">
+                         <div class="input-group">
+                            <input class="form-control" placeholder="Project name" name="ProjectName" ngModel formControlName="ProjectName"/>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Duration" name="ProjectDuration" ngModel formControlName="ProjectDuration"/>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="StartDate" [(ngModel)]="model1" ngbDatepicker
+                                #d="ngbDatepicker" ngModel formControlName="StartDate"/>
+                            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                    <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                  </svg>
+                            </button>
+                        </div>
+                    </div>
+    
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="EndDate" [(ngModel)]="model2" ngbDatepicker
+                                #e="ngbDatepicker" ngModel formControlName="EndDate"/>
+                            <button class="btn btn-outline-secondary" (click)="e.toggle()" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                    <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                                  </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Email" name="Email" ngModel formControlName="Email"/>
+                            
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <input class="form-control" placeholder="Manager name" name="ManagerName" ngModel formControlName="ManagerName"/>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="input-group">
+                            <input class="form-control" placeholder="Status" name="Status" ngModel formControlName="Status"/>
+                            
+                        </div>
+                </div>
+    
+                <button type="submit" class="btn btn-primary button">Register</button>
+            </form>
+        </div>
+
+        <div class="col-7">
+            <h2>Project Details</h2>
+            <mat-card>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Project</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Manager</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let project of getProjects">
+                                <th scope="row">{{project.ProjectName}}</th>
+                                <td>{{project.ProjectDuration}}</td>
+                                <td>{{project.StartDate}}</td>
+                                <td>{{project.ManagerName}}</td>
+                                <td>{{project.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

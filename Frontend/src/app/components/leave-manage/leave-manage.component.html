@@ -1,0 +1,76 @@
+
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <h1>Employee Leaves</h1>
+    <div class="row">
+        <div >
+            <mat-card>
+                <h3 class="card-title cardtitle">Leave Requests</h3>
+                <div class="tablediv table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table tablescroll">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description Name</th>
+                                <th scope="col">Days Off</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">Month</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let leave of leavesbyStatus">
+                                <td>{{leave.ReqType}}</td>
+                                <td>{{leave.Reason}}</td>
+                                <td>1</td>
+                                <td>{{leave.RequestDate}}</td>
+                                <td>{{leave.Month}}</td>
+                                <td>{{leave.Status}}</td>
+                                <td>{{leave.Email}}</td>
+                                <td><button type="submit" (click)="leaveApprove(leave._id)" class="btn btn-success">Approve</button></td>
+                                <td><button type="button" (click)="leaveReject(leave._id)" class="btn btn-danger">Reject</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row allleave">
+        <div >
+            <mat-card>
+                <h3 class="card-title cardtitle">All Leave</h3>
+                <div class="tablediv table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table tablescroll">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description Name</th>
+                                <th scope="col">Days Off</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">Month</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Employee Name</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let leave of leaves">
+                                <td>{{leave.ReqType}}</td>
+                                <td>{{leave.Reason}}</td>
+                                <td>1</td>
+                                <td>{{leave.RequestDate}}</td>
+                                <td>{{leave.Month}}</td>
+                                <td>{{leave.Status}}</td>
+                                <td>{{leave.Email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

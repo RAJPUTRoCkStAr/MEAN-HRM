@@ -1,0 +1,154 @@
+<app-navbar></app-navbar>
+<div class="container mt-3">
+    <h1>Profile</h1>
+    <div class="row rowheight">
+        <div class="col-7">
+            <mat-card>
+                <h3 class="card-title cardtitle">Employee details <span><img class="title-icon" src="../../../assets/icons/id-card.png" /></span></h3>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Phone No</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Designation</th>
+                                <th scope="col">Employeement start date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <td>{{FirstName}}</td>
+                                <td>{{LastName}}</td>
+                                <td>{{PhoneNo}}</td>
+                                <td>{{Address}}</td>
+                                <td>{{Designation}}</td>
+                                <td>{{StartDate}}</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-5">
+            <mat-card>
+                <h3 class="card-title cardtitle">Software details <span><img class="title-icon" src="../../../assets/icons/software.png" /></span></h3>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Resource Type</th>
+                                <th scope="col">Resource Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Issued Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let software of softwares">
+                                <th>{{software.ResourcesType}}</th>
+                                <td>{{software.ResourcesName}}</td>
+                                <td>{{software.Description}}</td>
+                                <td>{{software.IssuedDate}}</td>
+                                <td>{{software.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row rowheight">
+        <div class="col-7">
+            <mat-card>
+                <h3 class="card-title cardtitle">Project details <span><img class="title-icon" src="../../../assets/icons/project-management.png" /></span></h3>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Manager Name</th>
+                                <th scope="col">Project Name</th>
+                                <th scope="col">Duration</th>
+                                <th scope="col">Start</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let project of projects">
+                                <th scope="row">{{project.ManagerName}}</th>
+                                <td>{{project.ProjectName}}</td>
+                                <td>{{project.ProjectDuration}}</td>
+                                <td>{{project.StartDate}}</td>
+                                <td>{{project.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-5">
+            <mat-card>
+                <h3 class="card-title cardtitle">Hardware details <span><img class="title-icon" src="../../../assets/icons/hammer.png" /></span></h3>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Resource Type</th>
+                                <th scope="col">Resource Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Issued Date</th>
+                                <th scope="col">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let haedware of hardwares">
+                                <th>{{haedware.ResourcesType}}</th>
+                                <td>{{haedware.ResourcesName}}</td>
+                                <td>{{haedware.Description}}</td>
+                                <td>{{haedware.IssuedDate}}</td>
+                                <td>{{haedware.Status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="row rowheight">
+        <div class="col-12">
+            <mat-card>
+                <h3 class="card-title cardtitle">Employee Salary <span><img class="title-icon" src="../../../assets/icons/salary.png" /></span></h3>
+                <div class="tablediv">
+                    <table class="table">
+                        <thead class="theadbak">
+                            <tr>
+                                <th scope="col">Month</th>
+                                <th scope="col">Basic Salary</th>
+                                <th scope="col">Deductions</th>
+                                <th scope="col">Reson(Deduct)</th>
+                                <th scope="col">Addition</th>
+                                <th scope="col">Reason(Addition)</th>
+                                <th scope="col">Net Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr *ngFor="let employee of empSal">
+                                <td>{{employee.Month}}</td>
+                                <td>{{basicSal}}</td>
+                                <td>{{employee.DeductAmount}}</td>
+                                <td>{{employee.DeductReason}}</td>
+                                <td>{{employee.AddAmount}}</td>
+                                <td>{{employee.AddReason}}</td>
+                                <td>{{employee.NetSalary}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
